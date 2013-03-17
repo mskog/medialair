@@ -4,10 +4,7 @@ require_relative 'configurable'
 
 class API < Grape::API
   extend MediaLair::Configurable
-
-  VIDEO_FILE_FORMATS = %w(avi mpg mpeg mkv divx mp4 mov wmv)
-
-  valid_configuration_keys :tv_directory
+  
   configure_from_yaml_file 'configuration.yml'
 
   format :json
