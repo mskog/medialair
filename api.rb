@@ -15,7 +15,7 @@ class API < Grape::API
   resources :media do
     get :latest_tv_episodes do
       tv = MediaLair::Tv.new(API.config[:tv_directory])
-      tv.latest_tv_episodes
+      tv.latest_tv_episodes.sort_by{|episode| episode['created_at']}.reverse
     end
   end
 end
