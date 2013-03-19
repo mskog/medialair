@@ -9,7 +9,7 @@ module MediaLair
     def new_music
       Dir.entries(@new_music_directory).map do |entry|
         next if entry == '.' || entry == '..'
-        File.basename(entry)
+        File.basename(entry) if File.directory?(File.join(@new_music_directory,entry))
       end.compact
     end
   end
