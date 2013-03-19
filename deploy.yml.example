@@ -1,0 +1,5 @@
+---
+domain: 'example.com:'
+project: 'medialair'
+directory: '/www'
+repository: 'https://github.com/mskog/medialair'
